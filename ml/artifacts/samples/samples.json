@@ -1,0 +1,38 @@
+[
+  {
+    "file": "example_cardboard.jpg",
+    "kind": "example",
+    "true_label": "cardboard",
+    "note": "Example image from the held-out test split."
+  },
+  {
+    "file": "example_glass.jpg",
+    "kind": "example",
+    "true_label": "glass",
+    "note": "Example image from the held-out test split."
+  },
+  {
+    "file": "example_metal.jpg",
+    "kind": "example",
+    "true_label": "metal",
+    "note": "Example image from the held-out test split."
+  },
+  {
+    "file": "example_paper.jpg",
+    "kind": "example",
+    "true_label": "paper",
+    "note": "Example image from the held-out test split."
+  },
+  {
+    "file": "example_plastic.jpg",
+    "kind": "example",
+    "true_label": "plastic",
+    "note": "Example image from the held-out test split."
+  },
+  {
+    "file": "example_trash.jpg",
+    "kind": "example",
+    "true_label": "trash",
+    "note": "Example image from the held-out test split."
+  }
+]

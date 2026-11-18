@@ -1,0 +1,38 @@
+{
+  "name": "TrashNet",
+  "source": "https://github.com/garythung/trashnet",
+  "license": "MIT (see the TrashNet repository)",
+  "classes": [
+    "cardboard",
+    "glass",
+    "metal",
+    "paper",
+    "plastic",
+    "trash"
+  ],
+  "class_counts": {
+    "cardboard": 403,
+    "glass": 498,
+    "metal": 409,
+    "paper": 594,
+    "plastic": 480,
+    "trash": 137
+  },
+  "total_images": 2521,
+  "splits": {
+    "train": {
+      "n": 1764,
+      "fraction": 0.6997
+    },
+    "validation": {
+      "n": 378,
+      "fraction": 0.1499
+    },
+    "test": {
+      "n": 379,
+      "fraction": 0.1503
+    }
+  },
+  "exact_duplicates_removed": 0,
+  "unreadable_images_removed": 0
+}

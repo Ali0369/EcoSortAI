@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "models": [
+    {
+      "id": "e1_cnn",
+      "code": "E1",
+      "name": "Custom CNN",
+      "role": "baseline",
+      "attention": "none",
+      "description": "Custom CNN baseline trained from scratch.",
+      "file": "models/e1_cnn.keras",
+      "sha256": "8039a15001ec1fea190cc2584d9868e19ad5530209b033380e18adb67e30f0ef",
+      "size_bytes": 5131780,
+      "input": {
+        "dtype": "float32",
+        "range": "0-255",
+        "channels": "RGB",
+        "shape": [
+          null,
+          null,
+          3
+        ]
+      },
+      "feature_layer": "last_conv_act",
+      "is_proposed": false,
+      "reference_check": {
+        "image": "samples/example_cardboard.jpg",
+        "tolerance": 0.02,
+        "probabilities": [
+          0.9716907143592834,
+          0.0025362439919263124,
+          0.012817592360079288,
+          0.002992902183905244,
+          0.004754543770104647,
+          0.005208081100136042
+        ]
+      }
+    },
+    {
+      "id": "e2_efficientnetb0",
+      "code": "E2",
+      "name": "EfficientNetB0",
+      "role": "baseline",
+      "attention": "none",
+      "description": "ImageNet-pretrained EfficientNetB0 transfer-learning baseline (same head as E3, no attention).",
+      "file": "models/e2_efficientnetb0.keras",
+      "sha256": "dda51995792f43b1719e88c11938a5cf476954736b9e7e05f6368cb918427975",
+      "size_bytes": 31761128,
+      "input": {
+        "dtype": "float32",
+        "range": "0-255",
+        "channels": "RGB",
+        "shape": [
+          null,
+          null,
+          3
+        ]
+      },
+      "feature_layer": "backbone",
+      "is_proposed": false,
+      "reference_check": {
+        "image": "samples/example_cardboard.jpg",
+        "tolerance": 0.02,
+        "probabilities": [
+          0.9999978542327881,
+          4.440694756357999e-10,
+          2.640164753486829e-09,
+          2.1493426629604073e-06,
+          5.262279501039302e-11,
+          3.944563342628271e-09
+        ]
+      }
+    },
+    {
+      "id": "e3_hybrid_cbam",
+      "code": "E3",
+      "name": "EfficientNetB0 + CBAM",
+      "role": "proposed",
+      "attention": "cbam",
+      "description": "Proposed EfficientNetB0 feature extractor with CBAM channel and spatial attention.",
+      "file": "models/e3_hybrid_cbam.keras",
+      "sha256": "8956f27f8bb64a6c1fd0d23ebdb0e188bf0a145a499ec451af7b31ca1ba0bb95",
+      "size_bytes": 34253472,
+      "input": {
+        "dtype": "float32",
+        "range": "0-255",
+        "channels": "RGB",
+        "shape": [
+          null,
+          null,
+          3
+        ]
+      },
+      "feature_layer": "backbone",
+      "is_proposed": true,
+      "reference_check": {
+        "image": "samples/example_cardboard.jpg",
+        "tolerance": 0.02,
+        "probabilities": [
+          0.9999980926513672,
+          9.718754967469323e-11,
+          6.544762953808458e-09,
+          1.8663527043827344e-06,
+          4.3025080026515283e-11,
+          1.624253087584293e-08
+        ]
+      }
+    }
+  ],
+  "default_model_id": "e3_hybrid_cbam",
+  "training_environment": {
+    "python": "3.13.16",
+    "tensorflow": "2.21.0",
+    "keras": "3.15.1",
+    "numpy": "2.4.6"
+  }
+}

@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { @apply bg-cream font-sans text-forest antialiased; }
+:focus-visible { outline: 2px solid #173D33; outline-offset: 2px; border-radius: 8px; }
+
+@layer components {
+  .card { @apply rounded-card bg-white shadow-card; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply btn bg-forest text-white hover:bg-deep; }
+  .btn-ghost { @apply btn border border-line bg-white text-forest hover:bg-sage; }
+  .btn-soft { @apply btn bg-sage text-forest hover:bg-leaf; }
+  .btn-lime { @apply btn bg-lime text-forest hover:brightness-95; }
+  .eyebrow { @apply text-[11px] font-medium tracking-wide text-muted; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}

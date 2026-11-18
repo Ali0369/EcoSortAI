@@ -1,0 +1,68 @@
+{
+  "status": "passed",
+  "environment": {
+    "python": "3.13.16",
+    "tensorflow": "2.21.0",
+    "keras": "3.15.1",
+    "numpy": "2.4.6"
+  },
+  "models": {
+    "e1_cnn": {
+      "layers_checked": 16,
+      "weight_arrays_identical": 12,
+      "max_prob_diff_vs_trained": 2.384185791015625e-07,
+      "reference_prediction": "cardboard",
+      "reference_confidence": 0.9716907143592834,
+      "cpu_ms_median": 38.08969350006919,
+      "cbam_weights": null
+    },
+    "e2_efficientnetb0": {
+      "layers_checked": 7,
+      "weight_arrays_identical": 316,
+      "max_prob_diff_vs_trained": 7.152557373046875e-07,
+      "reference_prediction": "cardboard",
+      "reference_confidence": 0.9999978542327881,
+      "cpu_ms_median": 376.7518900001505,
+      "cbam_weights": null
+    },
+    "e3_hybrid_cbam": {
+      "layers_checked": 9,
+      "weight_arrays_identical": 322,
+      "max_prob_diff_vs_trained": 7.748603820800781e-07,
+      "reference_prediction": "cardboard",
+      "reference_confidence": 0.9999980926513672,
+      "cpu_ms_median": 386.4796815000773,
+      "cbam_weights": {
+        "mlp_reduce": [
+          [
+            1280,
+            80
+          ],
+          [
+            80
+          ]
+        ],
+        "mlp_expand": [
+          [
+            80,
+            1280
+          ],
+          [
+            1280
+          ]
+        ],
+        "spatial_conv": [
+          [
+            7,
+            7,
+            2,
+            1
+          ],
+          [
+            1
+          ]
+        ]
+      }
+    }
+  }
+}

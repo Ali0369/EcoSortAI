@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "metric": "max softmax probability",
+  "chosen_on": "validation split only",
+  "models": {
+    "e1_cnn": {
+      "threshold": 0.3,
+      "val_coverage": 0.9101,
+      "val_selective_accuracy": 0.6366,
+      "rule": "Selected using validation data; balances coverage and selective accuracy.",
+      "test": {
+        "coverage": 0.8945,
+        "selective_accuracy": 0.6372
+      }
+    },
+    "e2_efficientnetb0": {
+      "threshold": 0.44,
+      "val_coverage": 0.9868,
+      "val_selective_accuracy": 0.9115,
+      "rule": "Selected using validation data; balances coverage and selective accuracy.",
+      "test": {
+        "coverage": 0.9815,
+        "selective_accuracy": 0.9167
+      }
+    },
+    "e3_hybrid_cbam": {
+      "threshold": 0.3,
+      "val_coverage": 1.0,
+      "val_selective_accuracy": 0.8783,
+      "rule": "Selected using validation data; balances coverage and selective accuracy.",
+      "test": {
+        "coverage": 1.0,
+        "selective_accuracy": 0.8945
+      }
+    }
+  }
+}

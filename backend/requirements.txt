@@ -1,0 +1,13 @@
+# Web framework
+fastapi>=0.110,<1.0
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9
+pydantic>=2.6,<3
+# Image handling / numerics
+pillow>=10.0
+numpy>=1.26
+matplotlib>=3.8
+# Model runtime. These two MUST match the notebook (it pins the same versions in its first cell and records them
+# in ml/artifacts/environment.txt and model_metadata.json -> training_environment).
+tensorflow==2.21.0
+keras==3.15.1
